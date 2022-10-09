@@ -1,0 +1,100 @@
+@use "../../scss/variables.scss" as *;
+
+.cart-item-container {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 24px;
+  .details-container {
+    .attributes-container {
+
+      .attribute-container {
+        margin-bottom: 24px;
+      }
+
+      .attribute-name {
+        font-family: 'Roboto Condensed' , sans-serif;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .attribute-items-container {
+        display: flex;
+        .attribute-item {
+          width: 63px;
+          height: 45px;
+          border: 1px solid $primary-color;
+          font-family: 'Source Sans Pro';
+          font-size: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          cursor: pointer;
+
+          &-selected {
+            background-color: $primary-color;
+            color: $primary-bg;
+          }
+        }
+        .attribute-item-swatch {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .preview-container {
+    display: flex;
+    .btns-container {
+      padding-inline: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      .quantity-btn {
+        height: 45px;
+        width: 45px;
+        border: 1px solid #1D1F22;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 22px;
+      }
+
+      .quantity {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .image-container {
+      position: relative;
+      img {
+        width: 200px;
+      }
+
+      .img-navigator-btn {
+        background-color: rgba(0, 0, 0, 0.73);
+        width: 24px;
+        height: 24px;
+        text-align: center;
+        color: $primary-bg;
+        position: absolute;
+        bottom: 16px;
+        cursor: pointer;
+      }
+
+      .backward-btn {
+        right: 48px;
+      }
+      .forward-btn {
+        right: 16px;
+      }
+    }
+  }
+}

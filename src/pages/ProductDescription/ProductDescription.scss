@@ -1,0 +1,112 @@
+@use "../../scss/variables.scss" as *;
+
+.product-description-page {
+  margin-top: 72px;
+  padding-left: calc(97/1440 * 100%);
+  display: flex;
+  padding-bottom: 100px;
+
+  .preview-product-container {
+    display: flex;
+    margin-right: 100px;
+
+    .small-images-container {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 50px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      margin-right: 50px;
+    }
+
+    .main-image-container {
+      width: 610px;
+      text-align: center;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .details-container {
+    // max-width: 400px;
+    margin-right: 200px;
+    .brand {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+    .name {
+      font-size: 22px;
+      margin-bottom: 43px;
+    }
+
+    .attributes-container {
+
+      .attribute-container {
+        margin-bottom: 24px;
+      }
+
+      .attribute-name {
+        font-family: 'Roboto Condensed' , sans-serif;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .attribute-items-container {
+        display: flex;
+        .attribute-item {
+          width: 63px;
+          height: 45px;
+          border: 1px solid $primary-color;
+          font-family: 'Source Sans Pro';
+          font-size: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          cursor: pointer;
+
+          &-selected {
+            background-color: $primary-color;
+            color: $primary-bg;
+          }
+        }
+        .attribute-item-swatch {
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .price-container {
+      .title {
+        font-family: 'Roboto Condensed' , sans-serif;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .amount {
+        font-size: 24px;
+      }
+      margin-bottom: 20px;
+    }
+
+    .addToCart-btn {
+      font-size: 16px;
+      color: $primary-bg;
+      background-color: $secondary-color;
+      padding-block: 16px;
+      padding-inline: 93.5px;
+      cursor: pointer;
+      margin-bottom: 40px;
+      display: inline-block;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}

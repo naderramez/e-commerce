@@ -1,0 +1,15 @@
+@use "./scss/variables.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif !important;
+  color: $primary-color;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: #E5E5E5;
+}
