@@ -1,3 +1,5 @@
+@use "../../scss/variables.scss" as *;
+
 .cart-page {
   margin-top: 80px;
   padding-inline: calc(100/1440 * 100%);
@@ -5,5 +7,20 @@
   .page-title {
     margin-bottom: 55px;
     font-size: 32px;
+  }
+
+  .order-btn {
+    font-size: 16px;
+    color: $primary-bg;
+    background-color: $secondary-color;
+    padding-block: 13px;
+    padding-inline: 115.5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: inline-block;
+    &:hover {
+      opacity: .8;
+    }
   }
 }

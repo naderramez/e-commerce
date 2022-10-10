@@ -46,24 +46,27 @@ export class ProductDescription extends Component<Props, IState> {
   isItemInCart = false;
 
   onCartBtnClick = () => {
-    if (this.isItemInCart === false) {
-      const item = {
-        ...this.state.product,
-        attributes: this.state.selectedAttributes,
-      };
-      this.props.addItem(item);
-      this.isItemInCart = true;
-    } else {
-      router.navigate("/cart");
+    if (this.state.product?.inStock) {
+      if (this.isItemInCart === false) {
+        const item = {
+          ...this.state.product,
+          attributes: this.state.selectedAttributes,
+        };
+        this.props.addItem(item);
+        this.isItemInCart = true;
+      } else {
+        router.navigate("/cart");
+      }
     }
   };
 
   checkIfItemInCart = (product: IState["product"]) => {
     if (this.props.cartItems.length === 0) return false;
+    let itemInCart = false;
     this.props.cartItems.forEach((item) => {
-      if (item.id === product?.id) return true;
+      if (item.id === product?.id) itemInCart = true;
     });
-    return false;
+    return itemInCart;
   };
 
   selectAttribute = (attrID: string, itemID: string) => {
@@ -214,8 +217,15 @@ export class ProductDescription extends Component<Props, IState> {
             </div>
           </div>
 
-          <div className="addToCart-btn" onClick={this.onCartBtnClick}>
-            {this.isItemInCart ? "ITEM IN CART >" : "ADD TO CART"}
+          <div
+            className={this.state.product?.inStock ? "addToCart-btn" : "mb-4"}
+            onClick={this.onCartBtnClick}
+          >
+            {this.state.product?.inStock
+              ? this.isItemInCart
+                ? "ITEM IN CART >"
+                : "ADD TO CART"
+              : "OUT OF STOCK"}
           </div>
 
           <div

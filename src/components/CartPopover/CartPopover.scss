@@ -1,0 +1,38 @@
+@use "../../scss/variables.scss" as *;
+
+.container {
+  // width: 325px;
+  width: 600px;
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+  padding-inline: 16px;
+  padding-block: 32px;
+  background-color: white;
+
+  .title-container {
+    display: flex;
+    margin-bottom: 32px;
+  }
+
+  .btns-container {
+    margin-top: 32px;
+    display: flex;
+    width: 100%;
+    .cart-btn {
+      cursor: pointer;
+      flex-grow: 1;
+      text-align: center;
+      margin-inline: 20px;
+      padding-block: 15px;
+    }
+
+    .first-btn {
+      background-color: $primary-bg;
+      color: $primary-color;
+      border: solid 1px $primary-color;
+    }
+    .second-btn {
+      background-color: $secondary-color;
+      color: $primary-bg;
+    }
+  }
+}

@@ -35,9 +35,16 @@ export class Cart extends Component<Props> {
             </div>
           ))}
         </div>
-        <div>Tax 21%: {this.props.receiptDetails.tax.toFixed(2)}</div>
+        <div>
+          Tax 21%: {this.props.receiptDetails.currency?.symbol}
+          {this.props.receiptDetails.tax.toFixed(2)}
+        </div>
         <div>Quantity: {this.props.receiptDetails.quantity}</div>
-        <div>Total: {this.props.receiptDetails.totalPrice}</div>
+        <div>
+          Total: {this.props.receiptDetails.currency?.symbol}
+          {this.props.receiptDetails.totalPrice}
+        </div>
+        <div className="order-btn">ORDER</div>
       </div>
     );
   }
